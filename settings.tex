@@ -1,0 +1,63 @@
+% settings.tex
+\usepackage[
+    a4paper, 
+    top=3cm,
+    left=1cm,
+    right=1cm,
+    bottom=2cm
+]{geometry}
+
+\usepackage{fontspec}
+\usepackage{graphicx} % package to insert images
+\usepackage{hyperref} % for hyperlinks
+\usepackage{fancyhdr}
+\usepackage[ngerman]{babel}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{titlesec} % For section customization
+\usepackage{xcolor} % For color
+\usepackage{sectsty} % For sections
+\usepackage{ragged2e}
+
+\setmainfont{Carlito}
+
+% Fancyhdr setup
+\fancypagestyle{defaultpagestyle}{
+    \fancyhf{} % Clear all headers and footers
+    \fancyhead[C]{\includegraphics[width=5cm]{images/CoderDojo_Logo.png}} 
+    \renewcommand{\headrulewidth}{0pt} % Remove header line
+    \renewcommand{\footrulewidth}{0pt} % Remove footer line
+    \fancyfoot[L]{\footertitle} % Left footer
+    \fancyfoot[R]{Seite \thepage} % Right footer with page number
+}
+
+\newcommand{\SectionDesign}[4]{
+    \noindent
+    \csname #1*\endcsname{\textcolor[HTML]{1E90FF}{\fontsize{#2pt}{#3pt}\selectfont #4}}
+}
+
+\newcommand{\TextAndImage}[5][{}]{
+    \fontsize{11pt}{16pt}\selectfont
+    \noindent
+    \begin{minipage}[c]{#4\textwidth}
+    \RaggedRight
+    #2 % First parameter: text
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{#5\textwidth}
+    \includegraphics[width=\textwidth, #1]{#3} % Second parameter: image file name
+    \end{minipage}
+}
+
+\newcommand{\ImageAndText}[2]{
+    \fontsize{16pt}{24pt}\selectfont
+    \noindent
+    \begin{minipage}[c]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{#1} % Second parameter: image file name
+    \end{minipage}
+    \hfill % Fills the space between the minipages
+    \begin{minipage}[c]{0.45\textwidth}
+        \centering
+        #2 % First parameter: text
+    \end{minipage}
+}
