@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build PDF
+      - name: Build PDFs
         run: |
-          docker run --rm -v $(pwd):/data -w /data --entrypoint xelatex rstropek/pandoc-coderdojo main.tex
+          ./generatePdfs.sh uebungsanleitungen_liste/
         
       - name: Publish PDF
         uses: actions/upload-artifact@v4
         with:
-          name: main.pdf
-          path: ./main.pdf
+          name: Uebungsanleitungen
+          path: uebungsanleitungen_liste/**/*.pdf
