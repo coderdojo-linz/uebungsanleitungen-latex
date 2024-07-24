@@ -14,7 +14,16 @@ jobs:
 
       - name: Build PDFs
         run: |
-          ./generatePdfs.sh uebungsanleitungen_liste/
+          base_path=$(realpath uebungsanleitungen_liste)
+          for dir in "$base_path"/*/; do
+            if [ -d "$dir" ]; then
+              subfolder_name=$(basename "$dir")
+              echo "Processing directory: $subfolder_name"
+
+              docker run --rm -v "$(pwd):/data" -w /data/uebungsanleitungen_liste/$subfolder_name --entrypoint xelatex rstropek/pandoc-coderdojo main.tex
+              mv uebungsanleitungen_liste/$subfolder_name/main.pdf uebungsanleitungen_liste/$subfolder_name/$subfolder_name.pdf
+            fi
+          done
         
       - name: Publish PDF
         uses: actions/upload-artifact@v4
