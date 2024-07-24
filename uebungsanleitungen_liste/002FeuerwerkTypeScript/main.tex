@@ -5,7 +5,7 @@
 \author{CoderDojo Linz}
 
 \newcommand{\footertitle}{Feuerwerk in TypeScript}
-\input{../../settings.tex}
+\input{settings.tex}
 \graphicspath{{images/}}
 
 \begin{document}
@@ -69,7 +69,7 @@
     Der von uns vorbereitete Code ist aber ziemlich dumm. Er schießt nach dem Laden der Ergebnisseite nur eine einzelne Rakete ab. Die dafür verantwortliche Zeile in unserem Code ist:
 
     \begin{center}
-    \texttt{fireworks.push(new Firework(p, 60, p.width / 2, 75, 15));}
+    \texttt{fireworks.push(new Firework(60, (p.width * 2) / 4, 75, 25));}
     \end{center}
         
     Deine Aufgabe ist, diese Codezeile zu suchen. Tipp: Sie ist in der Funktion \textit{setup}.
@@ -95,14 +95,14 @@
         \end{itemize}
     Deine Aufgabe ist, mit den Parametern zu experimentieren. Hier ein paar Hinweise dazu:
         \begin{itemize}
-            \item Den ersten Parameter \textit{p} ändere bitte nicht. Er ist aus technischen Gründen notwendig und wir gehen heute nicht näher darauf ein.
-            \item Ändere den zweiten Parameter \textit{60} auf einen anderen Wert zwischen \textit{0} und \textit{360}. Hier siehst du eine Darstellung, welcher Wert zu welcher Farbe wird:
+            % \item Den ersten Parameter \textit{p} ändere bitte nicht. Er ist aus technischen Gründen notwendig und wir gehen heute nicht näher darauf ein.
+            \item Ändere den ersten Parameter \textit{60} auf einen anderen Wert zwischen \textit{0} und \textit{360}. Hier siehst du eine Darstellung, welcher Wert zu welcher Farbe wird:
 
             \includegraphics[width=10cm]{images/Farben.png}
             
-            \item Beim dritten Parameter \textit{p.width / 2} wird die Mitte des Bildschirms errechnet. Du kannst hier statt der Formel auch eine Zahl angeben. Je kleiner die Zahl, desto weiter links erscheint die Rakete, je größer desto weiter rechts. Probiere mal 20, 200 und 400 aus. Siehst du, wie sich die Position der Rakete ändert?
-            \item Der vierte Parameter 75 steuert, wie hoch die Rakete fliegen wird. 0 bedeutet, dass sie kaum abhebt und 100 bedeutet, dass sie bis zum oberen Bildschirmrand fliegen wird. Probiere mal 0, 50, 75 und 100 aus. Siehst du, wie sich die Höhe der Rakete ändert
-            \item Der fünfte Parameter 15 bestimmt die Größe der Explosion. Probiere mal 10, 15 und 25 aus.
+            \item Beim zweiten Parameter \textit{p.width / 2} wird die Mitte des Bildschirms errechnet. Du kannst hier statt der Formel auch eine Zahl angeben. Je kleiner die Zahl, desto weiter links erscheint die Rakete, je größer desto weiter rechts. Probiere mal 20, 200 und 400 aus. Siehst du, wie sich die Position der Rakete ändert?
+            \item Der dritte Parameter 75 steuert, wie hoch die Rakete fliegen wird. 0 bedeutet, dass sie kaum abhebt und 100 bedeutet, dass sie bis zum oberen Bildschirmrand fliegen wird. Probiere mal 0, 50, 75 und 100 aus. Siehst du, wie sich die Höhe der Rakete ändert
+            \item Der vierte Parameter 25 bestimmt die Größe der Explosion. Probiere mal 10, 15 und 25 aus.
         \end{itemize}
     }
 
@@ -128,11 +128,11 @@
 
     \begin{tcolorbox}[colback=gray!30, colframe=white]
         \begin{verbatim}
-fireworks.push(new Firework(p, 60, p.width * 0 / 4, 75, 15));
-fireworks.push(new Firework(p, 60, p.width * 1 / 4, 75, 15));
-fireworks.push(new Firework(p, 60, p.width * 2 / 4, 75, 15));
-fireworks.push(new Firework(p, 60, p.width * 3 / 4, 75, 15));
-fireworks.push(new Firework(p, 60, p.width * 4 / 4, 75, 15));\end{verbatim}
+fireworks.push(new Firework(60, p.width * 0 / 4, 75, 15));
+fireworks.push(new Firework(60, p.width * 1 / 4, 75, 15));
+fireworks.push(new Firework(60, p.width * 2 / 4, 75, 15));
+fireworks.push(new Firework(60, p.width * 3 / 4, 75, 15));
+fireworks.push(new Firework(60, p.width * 4 / 4, 75, 15));\end{verbatim}
     \end{tcolorbox}
     
     \SectionDesign{subsubsection}{14}{24}{Konstanten}
@@ -147,11 +147,11 @@ fireworks.push(new Firework(p, 60, p.width * 4 / 4, 75, 15));\end{verbatim}
         \texttt{\textcolor{red}{const color = 180;}} \\
         \vspace{-0.4cm}
         \begin{verbatim}
-fireworks.push(new Firework(p, color, p.width * 0 / 4, 75, 15));
-fireworks.push(new Firework(p, color, p.width * 1 / 4, 75, 15));
-fireworks.push(new Firework(p, color, p.width * 2 / 4, 75, 15));
-fireworks.push(new Firework(p, color, p.width * 3 / 4, 75, 15));
-fireworks.push(new Firework(p, color, p.width * 4 / 4, 75, 15));\end{verbatim}
+fireworks.push(new Firework(color, p.width * 0 / 4, 75, 15));
+fireworks.push(new Firework(color, p.width * 1 / 4, 75, 15));
+fireworks.push(new Firework(color, p.width * 2 / 4, 75, 15));
+fireworks.push(new Firework(color, p.width * 3 / 4, 75, 15));
+fireworks.push(new Firework(color, p.width * 4 / 4, 75, 15));\end{verbatim}
     \end{tcolorbox}
     \vspace{0.2cm}
 
@@ -168,11 +168,11 @@ const color = 180;\end{verbatim}
         \texttt{\textcolor{red}{const size = 15;}} \\
         \vspace{-0.4cm}
         \begin{verbatim}
-fireworks.push(new Firework(p, color, p.width * 0 / 4, height, size));
-fireworks.push(new Firework(p, color, p.width * 1 / 4, height, size));
-fireworks.push(new Firework(p, color, p.width * 2 / 4, height, size));
-fireworks.push(new Firework(p, color, p.width * 3 / 4, height, size));
-fireworks.push(new Firework(p, color, p.width * 4 / 4, height, size));\end{verbatim}
+fireworks.push(new Firework(color, p.width * 0 / 4, height, size));
+fireworks.push(new Firework(color, p.width * 1 / 4, height, size));
+fireworks.push(new Firework(color, p.width * 2 / 4, height, size));
+fireworks.push(new Firework(color, p.width * 3 / 4, height, size));
+fireworks.push(new Firework(color, p.width * 4 / 4, height, size));\end{verbatim}
     \end{tcolorbox}
 
     \SectionDesign{subsubsection}{14}{24}{Zufallszahlen}
@@ -218,11 +218,11 @@ fireworks.push(new Firework(p, color, p.width * 4 / 4, height, size));\end{verba
   const color = p.random(360);
   const height = 75;
   const size = 15;
-  fireworks.push(new Firework(p, color, p.width * 0 / 4, height, size));
-  fireworks.push(new Firework(p, color, p.width * 1 / 4, height, size));
-  fireworks.push(new Firework(p, color, p.width * 2 / 4, height, size));
-  fireworks.push(new Firework(p, color, p.width * 3 / 4, height, size));
-  fireworks.push(new Firework(p, color, p.width * 4 / 4, height, size));\end{verbatim}
+  fireworks.push(new Firework(color, p.width * 0 / 4, height, size));
+  fireworks.push(new Firework(color, p.width * 1 / 4, height, size));
+  fireworks.push(new Firework(color, p.width * 2 / 4, height, size));
+  fireworks.push(new Firework(color, p.width * 3 / 4, height, size));
+  fireworks.push(new Firework(color, p.width * 4 / 4, height, size));\end{verbatim}
         \vspace{-0.4cm}
         \hspace{0.3cm}
         \texttt{\textcolor{red}{await delay(1000);}} \\
@@ -248,11 +248,11 @@ fireworks.push(new Firework(p, color, p.width * 4 / 4, height, size));\end{verba
   const color = p.random(360);
   const height = 75;
   const size = 15;
-  fireworks.push(new Firework(p, color, p.width * 0 / 4, height, size));
-  fireworks.push(new Firework(p, color, p.width * 1 / 4, height, size));
-  fireworks.push(new Firework(p, color, p.width * 2 / 4, height, size));
-  fireworks.push(new Firework(p, color, p.width * 3 / 4, height, size));
-  fireworks.push(new Firework(p, color, p.width * 4 / 4, height, size));
+  fireworks.push(new Firework(color, p.width * 0 / 4, height, size));
+  fireworks.push(new Firework(color, p.width * 1 / 4, height, size));
+  fireworks.push(new Firework(color, p.width * 2 / 4, height, size));
+  fireworks.push(new Firework(color, p.width * 3 / 4, height, size));
+  fireworks.push(new Firework(color, p.width * 4 / 4, height, size));
   await delay(1000);
 }\end{verbatim}
     \end{tcolorbox}
@@ -271,7 +271,7 @@ fireworks.push(new Firework(p, color, p.width * 4 / 4, height, size));\end{verba
     \vspace{0.2cm}
 
     \TextDesign{
-    Hmmm, könnten wir die \textit{for}-Schleife nicht auch verwenden, um die vielen, kopierten Aufrufe von \textit{fireworks.push} zu vereinfachen. Deine Aufgabe ist es, eine \textit{for}-Schleife zu verwenden, um aus den fünf \textit{ireworks.push}-Aufrufen einen zu machen. So muss der Code nach der Änderung aussehen:
+    Hmmm, könnten wir die \textit{for}-Schleife nicht auch verwenden, um die vielen, kopierten Aufrufe von \textit{fireworks.push} zu vereinfachen. Deine Aufgabe ist es, eine \textit{for}-Schleife zu verwenden, um aus den fünf \textit{fireworks.push}-Aufrufen einen zu machen. So muss der Code nach der Änderung aussehen:
     }
     
     \vspace{0.2cm}
@@ -285,7 +285,7 @@ for (let i = 0; i < 10; i++) {
         \hspace{0.3cm}
         \texttt{\textcolor{red}{for (let j = 0; j < 5; j++) \{}} \\
         \hspace{0.7cm}
-        \texttt{\textcolor{red}{fireworks.push(new Firework(p, color, (p.width * j) / 4, height, size)); }} \\
+        \texttt{\textcolor{red}{fireworks.push(new Firework(color, (p.width * j) / 4, height, size)); }} \\
         \hspace{0.3cm}
         \texttt{\textcolor{red}{\}}} \\
         \vspace{-0.4cm}
@@ -314,9 +314,9 @@ for (let i = 0; i < 10; i++) {
         \hspace{0.3cm}
         \texttt{\textcolor{red}{for (let j = 0; j < numberOfRockets; j++) \{}} \\
         \hspace{0.7cm}
-        \texttt{\textcolor{red}{fireworks.push(new Firework(p, color,}} \\
+        \texttt{\textcolor{red}{fireworks.push(new Firework(color, (p.width * j) / (numberOfRockets - 1),}} \\
         \hspace{1.5cm}
-        \texttt{\textcolor{red}{(p.width * j) / (numberOfRockets - 1), height, size));}} \\
+        \texttt{\textcolor{red}{height, size));}} \\
         \hspace{0.3cm}
         \texttt{\textcolor{red}{\}}} \\
         \vspace{-0.4cm}
@@ -355,8 +355,8 @@ for (let i = 0; i < 100; i++) {
   const size = 15;
   const numberOfRockets = 5;
   for (let j = 0; j < numberOfRockets; j++) {
-    fireworks.push(new Firework(p, p.random(360),
-        (p.width * j) / (numberOfRockets - 1), height, size));
+    fireworks.push(new Firework(p.random(360), (p.width * j) / 
+        (numberOfRockets - 1), height, size));
   }
   await delay(1000);
 }\end{verbatim}
@@ -439,8 +439,8 @@ for (let i = 0; i < 100; i++) {
         \texttt{\textcolor{red}{else height = 67.5;}} \\
         \vspace{-0.4cm}
         \begin{verbatim}
-    fireworks.push(new Firework(p, p.random(360),
-        (p.width * j) / (numberOfRockets - 1), height, size));
+    fireworks.push(new Firework(p.random(360), (p.width * j) / 
+        (numberOfRockets - 1), height, size));
   }
   await delay(1000);
 }\end{verbatim}
@@ -483,8 +483,8 @@ for (let i = 0; i < 100; i++) {
         \texttt{\textcolor{red}{let height = 25 + 75 * j / (numberOfRockets - 1);}}\\
         \vspace{-0.4cm}
         \begin{verbatim}
-    fireworks.push(new Firework(p, p.random(360),
-        (p.width * j) / (numberOfRockets - 1), height, size));
+    fireworks.push(new Firework(p.random(360), (p.width * j) / 
+        (numberOfRockets - 1), height, size));
   }
 
   await delay(1000);
@@ -512,13 +512,13 @@ for (let i = 0; i < 100; i++) {
     let height = 25 + 75 * j / (numberOfRockets - 1); \end{verbatim}
         \vspace{-0.4cm}
         \hspace{0.7cm}
-        \texttt{\textcolor{red}{fireworks.push(new Firework(p, 60,}} \\
+        \texttt{\textcolor{red}{fireworks.push(new Firework(60, (p.width * j)}} \\
         \hspace{1.5cm}
-        \texttt{\textcolor{red}{(p.width * j) / (numberOfRockets - 1), height, size));}} \\
+        \texttt{\textcolor{red}{/ (numberOfRockets - 1), height, size));}} \\
         \hspace{0.7cm}
-        \texttt{\textcolor{red}{fireworks.push(new Firework(p, 120,}} \\
+        \texttt{\textcolor{red}{fireworks.push(new Firework(120, (p.width * j)}} \\
         \hspace{1.5cm}
-        \texttt{\textcolor{red}{(p.width * j) / (numberOfRockets - 1), 25 + 100 - height, size));}} 
+        \texttt{\textcolor{red}{/ (numberOfRockets - 1), 25 + 100 - height, size));}} \\
         \vspace{-0.4cm}
         \begin{verbatim}
   }
