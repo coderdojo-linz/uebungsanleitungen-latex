@@ -1,8 +1,10 @@
 % main.tex
 \documentclass{article}
 
-\title{Fang mich}
-\author{CoderDojo Linz}
+\usepackage[pdfauthor={CoderDojo Linz},
+            pdftitle={Fang mich - mein erstes Spiel mit Scratch}]
+            {hyperref}
+
 
 \newcommand{\footertitle}{Fang mich - dein erstes Spiel mit Scratch}
 \input{../../settings.tex}
@@ -16,11 +18,11 @@
 \vspace{1cm}
 
 \ImageAndText{endgame.png}{
-
+\centering
 In diesem Spiel bist du ein kleiner Fisch, der dem großen Haifisch entkommen muss.
 
 \vspace{\baselineskip}
-Schaffst du es?}
+Schaffst du es?}{0.65}{0.25}{16}{24}
 \vspace{1cm}
 
 \SectionDesign{subsection}{18}{24}{\textbf{Scratch starten}}
@@ -30,10 +32,10 @@ Schaffst du es?}
     Öffnen einen Browser wie Chrome oder Firefox und öffne die Seite    \href{https://scratch.mit.edu}{\textcolor{blue}{https://scratch.mit.edu}}.
     Falls die Seite englisch angezeigt wird, scrolle ganz nach unten und ändere die Sprache auf Deutsch.
     Klicke dann auf den ersten Menüpunkt \textit{Entwickeln}, um mit dem Programmieren zu beginnen.
-}{Scratch_Starten.png}{0.35}{0.55}
+}{Scratch_Starten.png}{0.35}{0.55}{11}{16}
 
 \vspace{1cm}
-\TextAndImage{Das grüne Kärtchen mit den Tutorien kannst du schließen.}{Scratch_Starten2.png}{0.35}{0.55}
+\TextAndImage{Das grüne Kärtchen mit den Tutorien kannst du schließen.}{Scratch_Starten2.png}{0.35}{0.55}{11}{16}
 
 
 
@@ -44,40 +46,45 @@ Schaffst du es?}
 
 \TextAndImage[trim=0cm 0cm 0cm 8cm, clip=true]{
     \SectionDesign{subsubsection}{14}{24}{Spielfeld}
+    \vspace{0.25cm}
     
     Als erstes legst du fest, wie dein Spielfeld aussehen soll. Wir brauchen zuerst das Aquarium, in dem die Fische schwimmen. Wähle links unten unter \textit{Bühnenbild aus der Bibliothek wählen} ein Bühnenbild aus, zum Beispiel ein Aquarium.
-}{01-background.png}{0.55}{0.35}
+}{01-background.png}{0.55}{0.35}{11}{16}
 
 \vspace{0.5cm}
 \TextAndImage[trim=0cm 0cm 0cm 8cm, clip=true]{
     \SectionDesign{subsubsection}{14}{24}{Scratchy löschen}
+    \vspace{0.25cm}
     
     Als nächstes lösche die Figur Scratchy mit dem Namen \textit{Sprite 1} oder \textit{Figur1} indem du mit der rechten Maustaste darauf klickst. Im angezeigten Menü kannst du Scratchy löschen.
-}{02-delete-scratchy.png}{0.55}{0.35}
+}{02-delete-scratchy.png}{0.55}{0.35}{11}{16}
 
 
 \vspace{0.5cm}
 \TextAndImage[trim=0cm 0cm 0cm 9cm, clip=true]{
     \SectionDesign{subsubsection}{14}{24}{Figuren anlegen}
+    \vspace{0.25cm}
     
     Damit du später die Figuren leichter verwenden kannst, gib ihnen Namen wie \textit{Hai} und \textit{Fisch}. Du kannst den Namen von Figuren ändern, indem du unter der weißen Leinwand rechts neben dem Wort Figur auf das Namensfeld klickst und den neuen Namen eingibst.
-}{03-fish.png}{0.55}{0.35}
+}{03-fish.png}{0.55}{0.35}{11}{16}
 
 
 \vspace{0.5cm}
 \TextAndImage[trim=0cm 0cm 0cm 1cm, clip=true]{
     \SectionDesign{subsubsection}{14}{24}{Fisch verkleinern}
+    \vspace{0.25cm}
     
     Damit der kleine Fisch auch kleiner ist als der große Haifisch, müssen wir den Fisch verkleinern. Wähle dazu die Figur aus und ändere die Größe, so dass die Figur gut in dein Bühnenbild passt.
-}{Fisch_Verkleinern.png}{0.55}{0.35}
+}{Fisch_Verkleinern.png}{0.55}{0.35}{11}{16}
 
 
 \vspace{0.5cm}
 \TextAndImage[trim=0cm 0cm 0cm 8cm, clip=true]{
     \SectionDesign{subsubsection}{14}{24}{Namen vergeben}
+    \vspace{0.25cm}
     
     Damit der kleine Fisch auch kleiner ist als der große Haifisch, müssen wir den Fisch verkleinern. Wähle dazu die Figur aus und ändere die Größe, so dass die Figur gut in dein Bühnenbild passt.
-}{07-rename.png}{0.55}{0.35}
+}{07-rename.png}{0.55}{0.35}{11}{16}
 
 
 \TextAndImage[trim=0cm 0.5cm 0cm 0.5cm, clip=true]{
@@ -91,7 +98,7 @@ Schaffst du es?}
         \item Verknüpfe es jeweils mit einer Drehung \textit{setze Richtung auf …} unter \textit{Bewegung}, damit der Fisch in die richtige Richtung schaut.
         \item Außerdem brauchen wir \textit{gehe …er Schritt}, um den Fisch zu bewegen.
     \end{itemize}
-}{08-move-fish.png}{0.5}{0.35}
+}{08-move-fish.png}{0.5}{0.35}{11}{16}
 
 \begin{itemize}[left=0pt]
     \item Achte auf die Einstellungen der Kommandos.
@@ -109,7 +116,7 @@ Für \textit{Pfeil nach links} gedrückt: Richtung -90 Grad, gehe 10er-Schritte.
 \begin{itemize}[left=0pt]
         \item Experimentiere mit der Schrittanzahl. Je größer die Schrittanzahl, desto schneller ist dein Fisch.
         \item \TextAndImage{Damit der Fisch nicht auf dem Kopf steht, wenn es sich nach links bewegt, kannst du den Drehmodus ändern
-        }{Trimmed_Picture.png}{0.5}{0.35}
+        }{Trimmed_Picture.png}{0.5}{0.35}{11}{16}
 \end{itemize}
 
 \TextAndImage{
@@ -121,7 +128,7 @@ Für \textit{Pfeil nach links} gedrückt: Richtung -90 Grad, gehe 10er-Schritte.
         \item Wähle dazu den Haifisch aus, damit er blau umrandet ist.
         \item Im Tab \textit{Skripte} kannst du den Haifisch nun bewegen.
     \end{itemize}
-}{Haifisch_Bewegen.png}{0.55}{0.35}
+}{Haifisch_Bewegen.png}{0.55}{0.35}{11}{16}
 
 \begin{itemize}[left=0pt]
     \item Unter \textit{Ereignisse} wähle \textit{Wenn … angeklickt}.
@@ -145,7 +152,7 @@ Für \textit{Pfeil nach links} gedrückt: Richtung -90 Grad, gehe 10er-Schritte.
         \item Unter \textit{Ereignisse} wähle \textit{Wenn … angeklickt}.
         \item Setze den Fisch an Position -230 und 170 mittels \textit{gehe zu x: -230, y: 170}, um den Fisch ins linke obere Eck zu setzen, und \textit{zeige dich}.
     \end{itemize}
-}{10-touch-fish.png}{0.55}{0.35}
+}{10-touch-fish.png}{0.55}{0.35}{11}{16}
 
 \begin{itemize}[left=0pt]
     \item Falls jetzt der Hai berührt wird (\textit{Steuerung falls … dann}), dann \textit{sende “berührt” an alle, verstecke dich, warte 5 Sekunden, zeige dich}, und gehe wieder ins linke obere Eck mit \textit{gehe zu x: -230, y: 170}. Anschließend sage \textit{Willkommen zurück} für 2 Sekunden.
@@ -162,7 +169,7 @@ Für \textit{Pfeil nach links} gedrückt: Richtung -90 Grad, gehe 10er-Schritte.
         \item Wähle dazu den Haifisch aus, damit er blau umrandet ist.
         \item Im Tab \textit{Skripte} kannst du den Haifisch “Game Over” sagen lassen.
     \end{itemize}
-}{11-touch-shark.png}{0.45}{0.45}
+}{11-touch-shark.png}{0.45}{0.45}{11}{16}
 
 \begin{itemize}[left=0pt]
     \item Unter \textit{Ereignisse} wähle \textit{Wenn ich … empfange}, der Hai reagiert somit auf die vom Fisch ausgelöste Nachricht. Anschließend wähle \textit{wiederhole 2 mal} bei \textit{Steuerung} aus.

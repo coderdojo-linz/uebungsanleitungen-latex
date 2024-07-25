@@ -20,13 +20,14 @@
 \usepackage{array}
 \usepackage[table]{xcolor}
 \usepackage{fontawesome5}
+\usepackage{changepage}
 
 \setmainfont{Carlito}
 
 % Fancyhdr setup
 \fancypagestyle{defaultpagestyle}{
     \fancyhf{} % Clear all headers and footers
-    \fancyhead[C]{\includegraphics[width=5cm]{../../CoderDojo_Logo.png}} 
+    \fancyhead[C]{\includegraphics[width=5cm]{CoderDojo_Logo.png}} 
     \renewcommand{\headrulewidth}{0pt} % Remove header line
     \renewcommand{\footrulewidth}{0pt} % Remove footer line
     \fancyfoot[L]{\footertitle}
@@ -38,8 +39,8 @@
     \csname #1*\endcsname{\textcolor[HTML]{1E90FF}{\fontsize{#2pt}{#3pt}\selectfont #4}}
 }
 
-\newcommand{\TextAndImage}[5][{}]{
-    \fontsize{11pt}{16pt}\selectfont
+\newcommand{\TextAndImage}[7][{}]{
+    \fontsize{#6pt}{#7pt}\selectfont
     \noindent
     \begin{minipage}[c]{#4\textwidth}
     \RaggedRight
@@ -51,16 +52,15 @@
     \end{minipage}
 }
 
-\newcommand{\ImageAndText}[2]{
-    \fontsize{16pt}{24pt}\selectfont
+\newcommand{\ImageAndText}[7][{}]{
+    \fontsize{#6pt}{#7pt}\selectfont
     \noindent
-    \begin{minipage}[c]{0.65\textwidth}
-        \includegraphics[width=\textwidth]{#1} % Second parameter: image file name
+    \begin{minipage}[c]{#4\textwidth}
+    \includegraphics[width=\textwidth, #1]{#2} % Second parameter: image file name
     \end{minipage}
-    \hfill % Fills the space between the minipages
-    \begin{minipage}[c]{0.25\textwidth}
-        \centering
-        #2 % First parameter: text
+    \hfill
+    \begin{minipage}[c]{#5\textwidth}
+    #3 % First parameter: text
     \end{minipage}
 }
 

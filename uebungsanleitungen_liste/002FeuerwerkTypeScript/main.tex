@@ -1,8 +1,9 @@
 % main.tex
 \documentclass{article}
 
-\title{Feuerwerk}
-\author{CoderDojo Linz}
+\usepackage[pdfauthor={CoderDojo Linz},
+            pdftitle={Feuerwerk in TypeScript}]
+            {hyperref}
 
 \newcommand{\footertitle}{Feuerwerk in TypeScript}
 \input{../../settings.tex}
@@ -14,8 +15,10 @@
     \SectionDesign{section}{24}{24}{\textbf{Feuerwerk mit TypeScript}}
     \vspace{1cm}
      
-    \ImageAndText{Feuerwerk.png}{Heute programmieren wir einen Feuerwerk-Simulator. Dabei kannst du das Tippen von Code auf der Tastatur üben und lernst Grundlagen der textuellen Programmierung kennen.
-    }
+    \ImageAndText{Feuerwerk.png}{
+    \centering
+    Heute programmieren wir einen Feuerwerk-Simulator. Dabei kannst du das Tippen von Code auf der Tastatur üben und lernst Grundlagen der textuellen Programmierung kennen.
+    }{0.6}{0.3}{16}{24}
     
     \vspace{2cm}
     \SectionDesign{subsection}{18}{24}{\textbf{Ziel der Übung}}
@@ -38,7 +41,6 @@
 
 
     % NEWPAGE
-
     \newpage
     \TextDesign{
     Um loszulegen, öffne die URL \href{https://stackblitz.com/edit/feuerwerk-basics-starter?file=index.ts}{\textcolor{blue}{https://stackblitz.com/edit/feuerwerk-basics-starter?file=index.ts}}. Du wirst dadurch im Web-Browser ein Fenster sehen, das in etwa so aussieht:
@@ -331,7 +333,7 @@ for (let i = 0; i < 10; i++) {
 
     \vspace{\baselineskip}
     Hier noch ein Tipp: Wenn du ein richtig großes Feuerwerk sehen willst, das über den ganzen Bildschirm geht, klicke auf Open in \textit{New Window} (rechts oben im Bildschirmfenster), drücke danach \textit{F11} (Vollbildschirm) und zum Schluss F5 zum neu Laden. Cool, oder? Um aus der Vollbildschirmanzeige rauszukommen, drücke einfach nochmals F11.
-    }{Noch_Mehr_Raketen.png}{0.4}{0.5}
+    }{Noch_Mehr_Raketen.png}{0.4}{0.5}{11}{16}
 
 
     % NEW PAGE
