@@ -33,29 +33,20 @@
 
     \vspace{0.5cm}
     \SectionDesign{subsubsection}{14}{24}{Spielfeld}
-    \vspace{-1cm}
     
     \TextAndImage{
     \vspace{-0.5cm}
-    Als erstes legst du fest, wie deine Bühne aussehen soll. Für dieses Spiel brauchst du einen blauen Himmel als Hintergrund. Wähle ein passendes Bild aus oder male selbst eines.}{Spielfeld.png}{0.45}{0.45}{11}{16}
+    Als erstes legst du fest, wie deine Bühne aussehen soll. Für dieses Spiel brauchst du einen blauen Himmel als Hintergrund. Wähle ein passendes Bild aus oder male selbst eines.}{Spielfeld.png}{0.45}{0.35}{11}{16}
 
 
-    % NEW PAGE
-    \newpage
+
     \vspace{0.5cm}
     \SectionDesign{subsubsection}{14}{24}{Figuren}
-    \vspace{0.5cm}
+    \vspace{-0.5cm}
 
     \TextAndImage{
-    Als erste Figur brauchst du eine Person deiner Wahl (zum Beispiel die Figur \textit{Hannah}). Den Scratchy darfst du löschen. Du fügst es mit \textit{Figur wählen} ein. Außerdem brauchst du noch eine Hecke, einen Apfel, einen Vogel und einen Boden, die du entweder selbst mit Midjourney generieren, selber zeichnen oder aus den vorhandenen Figuren wählen kannst
-    
-    \vspace{\baselineskip}
-    \textbf{\textcolor[HTML]{1E90FF}{Achtung:} Die Figuren Apfel und Vogel kannst du verstecken, indem du \textit{Sichtbarkeit} deaktivierst.}
-    }{Figuren.png}{0.45}{0.45}{11}{16}
-
-    \vspace{0.25cm}
-    \RaggedLeft
-    \includegraphics[width=10cm]{Figuren2.png}
+    Als erste Figur brauchst du eine Person deiner Wahl (zum Beispiel die Figur \textit{Hannah}). Den Scratchy darfst du löschen. Du fügst es mit \textit{Figur wählen} ein. 
+    }{Figuren.png}{0.45}{0.35}{11}{16}
 
     \vspace{0.5cm}
     \ImageAndText{HannahRennt.png}{
@@ -68,18 +59,29 @@
     \begin{adjustwidth}{-15cm}{18cm}  
         Optional kannst du noch das Kostüm \textit{hannah-c} löschen. So sollten deine Kostüme dann am Ende ausschauen.
     \end{adjustwidth}
-    }{0.15}{0.6}{11}{16}
+    }{0.12}{0.63}{11}{16}
 
-    \TextAndImage{
-    \begin{adjustwidth}{5cm}{0cm}
+    \vspace{0.5cm}
+    \TextAndImage{Außerdem brauchst du noch eine Hecke, einen Apfel, einen Vogel und einen Boden:
+
+        \begin{itemize}
+        \item Apfel: \href{https://meet.coderdojo.net/apfel-sprite}{\textcolor{blue}{https://meet.coderdojo.net/apfel-sprite}}
+        \item Hecke: \href{https://meet.coderdojo.net/hecke-sprite}{\textcolor{blue}{https://meet.coderdojo.net/hecke-sprite}}
+        \item Vogel: \href{https://meet.coderdojo.net/vogel-sprite}{\textcolor{blue}{https://meet.coderdojo.net/vogel-sprite}}
+        \item Boden: %\href{https://meet.coderdojo.net/vogel-sprite}{\textcolor{blue}{
+        https://meet.coderdojo.net/boden-sprite
+        %}}
+        \end{itemize}
+
+    Du kannst nun die Figuren importieren, indem du auf \textit{Figur wählen} gehst und dann auf \textit{Figur hochladen}.
+    Wenn du jetzt auf die Figur \textit{Vogel} klickst und unter \textit{Kostüme} gehst, siehst du drei verschieden Kostüme:
     
-        \RaggedLeft
-        Die nächste Figur ist der Vogel, welcher aus drei Kostümen bestehen muss: dem Vogel selbst und zwei weiteren Kostümen, die angezeigt werden, wenn das Spiel verloren beziehungsweise gewonnen wurde.
-    
-        \vspace{\baselineskip}
-        Erstelle dazu zwei Kostüme mit dem Text \textit{Game Over} und \textit{Gewonnen} oder male passende Bilder.
-    \end{adjustwidth}
-    }{VogelKostüme.png}{0.55}{0.4}{11}{16}
+    den Vogel selbst und zwei weitere Kostüme, die angezeigt werden, wenn das Spiel verloren beziehungsweise gewonnen wurde.
+    }{VogelKostüme.png}{0.45}{0.45}{11}{16}
+
+    \vspace{0.25cm}
+    \RaggedLeft
+    \includegraphics[width=10cm]{Figuren2.png}
 
     \vspace{1cm}
     \RaggedRight
@@ -96,7 +98,12 @@
         \item die Geschwindigkeit des Vogels
         \item die Abweichung der Y Koordinate des Vogels
     \end{itemize}
-    Die ersten zwei sollen angehackt werden, um sie während des Spielens sehen zu können.
+
+    Die ersten zwei sollen angehackt werden, um sie während des Spielens sehen zu können
+
+    \vspace{\baselineskip}
+    
+    \textbf{\textcolor[HTML]{1E90FF}{Achtung:} Beim Erstellen der Variablen solltest bei allen \textit{Für alle Figuren} auswählen.}
     }{Variablen.png}{0.45}{0.45}{11}{16}
 
     \vspace{0.5cm}
@@ -123,6 +130,9 @@
     \end{itemize}
     
     Während keiner der Pfeiltasten gedrückt ist, wirkt die Schwerkraft, wodurch die Figur wieder zu Boden fällt. Dies sorgt dafür, dass die Spielfigur nicht in der Luft schwebt.
+
+    \vspace{\baselineskip}
+    \textbf{\textcolor[HTML]{1E90FF}{Achtung:} Beim Auswählen der Farbe bei \textit{wird Farbe berührt?} musst du die Farbe des Bodens auswählen!}
     }
     
     \vspace{1cm}
@@ -130,6 +140,8 @@
     \hspace{0.5cm}
     \includegraphics[width=9.25cm]{FigurenSkript2.png}
 
+    \vspace{0.5cm}
+    \TextDesign{\textbf{Gratulation! Jetzt solltest du in der Lage sein die Figur zu steuen. Drücke dafür einfach auf die rechte beziehungsweise linke Pfeiltaste um nach rechts oder links zu gehen. Um zu springen drücke einfach auf die Leertaste.}}
 
     \vspace{0.5cm}
     \SectionDesign{subsection}{18}{24}{\textbf{Skript für die Hecke}}
@@ -154,6 +166,9 @@
     \includegraphics[width=15cm]{HeckeSkript.png}
     \vspace{1cm}
 
+    \TextDesign{\textbf{Jetzt sollte sich deine Hecke von rechts nach links bewegen. Ist das nicht der Fall, überprüfe bitte noch einmal deine Codeblöcke, ansonsten super!}}
+
+    \vspace{0.5cm}
     \RaggedRight
     \SectionDesign{subsection}{18}{24}{\textbf{Skript für Äpfel}}
     \vspace{0.25cm}
@@ -176,6 +191,10 @@
     \includegraphics[width=15cm]{ApfelSkript.png}
     \vspace{1cm}
 
+    \TextDesign{\textbf{Toll gemacht, jetzt kannst du schon deine ersten Äpfel sammeln! Achte dabei auf die oben angezeigte Variable \textit{Gefangen}, welche sich bei jedem gesammelten Apfel um 1 erhöhen sollte.}}
+    \vspace{0.5cm}
+
+    \vspace{0.5cm}
     \RaggedRight
     \SectionDesign{subsection}{18}{24}{\textbf{Skript für Vögel}}
     \vspace{0.25cm}
@@ -197,20 +216,27 @@
 
     \centering
     \vspace{1cm}
-    \includegraphics[width=9cm]{VogelSkript.png}
-    \hspace{0.5cm}
-    \includegraphics[width=9cm]{VogelSkript2.png}
+    \includegraphics[width=15cm]{VogelSkript.png}
+    \vspace{0.5cm}
+    
+    \includegraphics[width=15cm]{VogelSkript2.png}
+    \vspace{0.5cm}
 
+
+    \includegraphics[width=15cm]{VogelSkript3.png}
+    \vspace{1cm}
+
+    \TextDesign{\textbf{Du bist jetzt schon fast fertig. Du kannst schon spielen, jedoch wird noch kein Kostüm angezeigt wenn du verlierst oder gewinnst. Dieses Problem sollte der nächste Schritt für dich lösen.}}
+    \vspace{0.5cm}
+
+    \vspace{0.5cm}
     \RaggedRight
-    \vspace{1cm}
-    \includegraphics[width=12cm]{VogelSkript3.png}
-    \vspace{1cm}
-
     \SectionDesign{subsection}{18}{24}{\textbf{Letzte Überprüfung}}
     
     \vspace{0.5cm}
     \SectionDesign{subsubsection}{14}{24}{Wechsle zum Kostüm}
     \vspace{0.25cm}
+
 
     \TextDesign{
     Der Codeblock wird nur bei der Figur \textit{Vogel} verwendet und überprüft folgende Situationen:
@@ -243,7 +269,8 @@
         \item Wenn die Figur gar keine Äpfel gesammelt hat und schon 10 Äpfel geklont wurden,
     \end{itemize}
 
-    dann wird das Skript, indem der Codeblock verwendet wird gestoppt.
+    dann wird das Skript, indem der Codeblock verwendet wird, gestoppt.
+    Um nachzuschauen, wo genau du diesen Codeblock überall einsetzen musst, kannst du dir den Code unter \href{https://scratch.mit.edu/projects/1049928428/}{\textcolor{blue}{https://meet.coderdojo.net/scratch-äpfelsammeln}} \newline anschauen.
     }  
 
     \vspace{0.5cm}
