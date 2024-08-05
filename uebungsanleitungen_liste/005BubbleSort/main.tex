@@ -99,13 +99,12 @@
    Wir fangen an mit unseren Gefäßen für die Bälle. Der erste Block gibt nur an das das alles ausgeführt werden soll wenn die Fahne angeklickt wird. Der zweite lila Block ist dafür da das die Gefäße nicht vor den Bällen sind und sie verdecken. Mit den zwei blauen Blöcken werden x und y festgelegt das die Figur immer am Anfang genau auf der Position ist und man sie nicht beliebig verschieben kann. Hier haben wir in Orange eine Variable diese Sätzen wir auf null das unser erster Behälter auf der Position bleibt wo er ist. Danach klonen wir den Behälter 2 mal weil wir insgesamt drei Behälter haben wollen hier ändern wir auch die Position um 1 damit die nächsten Behälter nicht die gleiche Position wie der erste haben. Darunter haben wir noch einen kleinen Block dieser wird ausgeführt wenn der Klone erstellt wird und gibt ihm mit der Formel den richtigen Platz. Diese kannst du einfach nachbauen. 
     }{CupBlöcke.png}{0.4}{0.5}{11}{16}
 
-    
-    \newpage
+
     \vspace{0.5cm}
     
     \SectionDesign{subsection}{18}{24}{\textbf{Eigene Blöcke anlegen}}
 
-   
+
     \vspace{0.5cm}
 
     \TextAndImage{
@@ -113,16 +112,18 @@
     }{NeuenBlockErstellen.png}{0.4}{0.5}{11}{16}
 
     \vspace{0.5cm}
+
+    \newpage
 \SectionDesign{subsection}{18}{24}{\textbf{Erste Blöcke }}
 
           \vspace{0.5cm}
                \TextAndImage{
-Am Anfang krigst du zwei Blöcke was du sicher brauchen wirst einfach mal zum abtippen! Damit kannst du leicht anfangen. Das hier ist der erste Block den brauchen wir das es das erste Zeichen von einen Text entfernt
+Am Anfang kriegst du zwei Blöcke was du sicher brauchen wirst einfach mal zum abtippen! Damit kannst du leicht anfangen. Das hier ist der erste Block den brauchen wir das es das erste Zeichen von einen Text entfernt
     }{ZeichenEntfernen.png}{0.4}{0.4}{11}{16}
 
           \vspace{0.5cm}
                \TextAndImage{
-Das hier ist der zweite bLock den du einfach abtippen musst! Dieser fügt am Anfang wider ein beliebiges Zeichen hinzu. 
+Das hier ist der zweite Block den du einfach abtippen musst! Dieser fügt am Anfang wider ein beliebiges Zeichen hinzu. 
     }{ZeichenHinzufügen.png}{0.4}{0.4}{11}{16}
 
    \vspace{0.5cm}
@@ -143,11 +144,6 @@ Falls du den Fehler nicht gefunden hast ist es nicht schlimm. Wir dürfen natür
 Richtig! Falls du den Fehler nicht gefunden hast ist das auch nicht schlimm! Wir müssen natürlich schauen ob die Farbe darunter stimmt das machen wir ebenfalls wider mit einen "Falls" Block. Einen Fehler haben wir noch. Kleiner Tipp: Überlege in welchen Behälter wir Kugeln hinzu fügen können! Darunter siehst du die verschachtelung nochmal groß
     }{ZielGefäß3.png}{0.4}{0.6}{11}{16}
 
-
-           \vspace{1cm}
-
- \includegraphics[width=20cm]{VerschachteltF.png}
- 
 \vspace{0.5cm}
 
      \TextAndImage{
@@ -178,7 +174,8 @@ Genau! Falls du den Fehler nicht gefunden hast ist das nicht schlimm! Wir könne
 
          \vspace{0.5cm}
 
-     
+     \includegraphics[width=20cm]{FrageL.png}
+      \vspace{0.5cm}
      \TextAndImage{
 Super!! Du bist fertig ! mit deinen zweiten Block. Die schleife brauchen wir genau wie in den letzten Block das unser Benutzer immer wider gefragt wird. 
     }{FrageQuell4.png}{0.4}{0.4}{11}{16}
@@ -187,14 +184,61 @@ Super!! Du bist fertig ! mit deinen zweiten Block. Die schleife brauchen wir gen
 
      
      \TextAndImage{
-In diesen Block müssen wir prüfen ob der Benutzer bereits gewonnen hat. 
-    }{GefäßeFüllen.png}{0.4}{0.6}{11}{16}
+In diesen Block musst du prüfen ob der Benutzer bereits gewonnen hat. Hier prüfen wir am Anfang in einer Schleife ob ein Behälter leer ist wenn ja setzen wir unsere Variable "Leer" auf 1 sodass der Rest voll sein muss. Danach überprüfen wir ob in den anderen Behältern auch immer nur die glreiche Farbe drinnen ist }{PrüfeObGewonnen.png}{0.4}{0.6}{11}{16}
 
-             \vspace{0.5cm}
 
-     
+\vspace{1cm}
+
+   \includegraphics[width=20cm]{PrüfeObGewonnenL.png}
+\vspace{1cm}
+
      \TextAndImage{
-Jetzt müssen wir unsere Behälter füllen das machen wir mit diesen Block. 
+Jetzt musst du unsere Behälter füllen das machen wir mit diesen Block. Wir haben eine Schleife die 2 mal wiederholt wird um unsere 2 Behälter zu befüllen danach haben wir noch eine Schleife die 3 mal durch geht weil wir 3 Bälle in einen Behälter haben möchten.In dieser bestimmen wir mit einer Zufallszahl die Farbe und entfernen ein Zeichen von der Schlange am Anfang. 
     }{GefäßeFüllen.png}{0.4}{0.6}{11}{16}
+
+\vspace{0.5cm}
+
+\TextAndImage{
+Jetzt musst du das alles nur noch Zusammen fügen. Die rosanen Blöcke sind die was wir uns selber erstellt haben. das Kostüm brauchen wir für den Gewinner Bildschirm. Die Nachricht "Kostüm von Bällen ändern" wird an alle Klone von den Bällen gesendet. Jetzt sind wir fast fertig mit unseren Biber-Blöcken.
+    }{FertigStellen.png}{0.4}{0.5}{11}{16}
+
+    \vspace{0.5cm}
+
+\TextAndImage{
+Mit diesen Block teilen wir unseren Klone Position und Kostüm zu. 
+    }{GewinnerKlone.png}{0.4}{0.5}{11}{16}
     
+\vspace{0.5cm}
+  
+\TextAndImage{
+Auch bei unseren Ball brauchen wir diesen Block wider du musst ihn wider erstellen und dann einfach abtippen. 
+    }{EntferneText.png}{0.4}{0.5}{11}{16}
+
+    \vspace{0.5cm}
+  
+\TextAndImage{
+Hier setzten wir das Kostüm für unseren Ball fest}
+{BallKostüm.png}{0.4}{0.5}{11}{16}
+    
+\vspace{0.5cm}
+  
+\TextAndImage{
+Diesen Block brauchen wir um unsere Bälle zufüllen. Heißt wir setzen fixe Bälle und ändern dann nur die kostüme.
+    }{BälleFüllen.png}{0.4}{0.3}{11}{16}
+    
+    \vspace{0.5cm}
+  
+\TextAndImage{
+Hier legen wir Positionen und Kostüme für unsere geklonten Bälle fest. }
+{BallKlone.png}{0.4}{0.3}{11}{16}
+
+
+\vspace{0.5cm}
+  
+\TextAndImage{
+Hier haben wir noch drei kleine Code schnipsel was wir noch brauchen. Das erste legt fest wenn die Flagge gedrückt wird das sich der Ball verstecken soll. Das zweite zeigt an was gemacht wird wenn die Nachricht "Kostüm von Bälle ändern" empfangen wird in diesen Fall wird wider ein Block von uns aufgerufen. Der dritte Teil zeigt was passiert wenn die Nachricht "Bälle erstellen" empfangen wird hier wird ebenfalls ein Block von uns aufgerufen. }
+{CodeSchnipsel.png}{0.4}{0.3}{11}{16}
+
+
+  
 \end{document}
