@@ -38,8 +38,61 @@
     \end{itemize}
 \newpage
 
+\TextAndImage{
+Am Anfang bekommst du einen Starter-Code von uns. Hier drinnen siehst du eine Setup function und eine draw function. Eine function ist so etwas wie ein eigener Block in Scratch. Diese zwei Methoden brauchen wir aber immer! 
+    }{AnfangBild.png}{0.4}{0.4}{11}{16}
+
+\vspace{0.5cm}
+
+\TextAndImage{
+Hier hast du drei Sachen was du im laufe des Spiels anpassen kannst wie es dir gefällt. Aktuell kannst du nur den Hintergrund ändern, weil man nur diesen sieht, dass machst du indem du hinter \textit{HintergrundBild} eine Zahl von 1-4 hinschreibst.
+    }{Änderungen.png}{0.4}{0.4}{11}{16}
 
           \vspace{0.5cm}
 
-  
+\TextAndImage{
+Wir fangen mit der \textit{draw()} function an. Mit dieser erstellen wir unsere Grafik. Wir  brauchen als erstes Behälter und unsere Figur (In diesen Fall ein Biber). Dafür brauchen wir den Code aus dem grauen Kästchen. 
+    }{Draw1.png}{0.4}{0.4}{11}{16}
+
+    \begin{tcolorbox}[colback=gray!30, colframe=white]
+        \begin{verbatim}
+    
+p.image(biber, 15, 100, biberGröße, biberGröße);
+
+behälterPositionen = [];
+
+// "Klont" die Behälter
+for (let i = 0; i < 3; i++) {
+
+const position = { x: 50 + 90 * i, y: p.height - 315, widthbehaelterBreite, 
+height: behaelterHöhe };
+
+behälterPositionen.push(position);
+
+p.image(behälter, position.x, position.y, position.width
+position.height);
+}
+
+\end{verbatim}
+    \end{tcolorbox}
+
+\vspace{0.5cm}
+
+\TextAndImage{
+Hier siehst du wo du den Code hin tippen musst. Toll wenn du das geschafft hast!! Jetzt kannst du oben auf "Speichern" drücken danach sollte dein Bildschirm so wie auf dem Bild aussehen. Aber fehlt da nicht noch was?
+    }{Draw2.png}{0.4}{0.4}{11}{16}
+
+
+\vspace{0.5cm}
+
+\TextDesign{
+ Eine \textit{for} Schleife kannst du dir wie eine \textit{widerhole '' mal} Schleife vorstellen. Die Variable \textit{i} wird mit \textit{let i = 0} angelegt. Mit \textit{i ++}  sagen wir das bei jeden Durchlauf i um 1 erhöht wird. Und mit  \textit{i<3} schauen wir ob i noch kleiner ist 3 und wenn nicht hört die Schleife auf. 
+}
+
+\vspace{0.5cm}
+
+\TextAndImage{
+Hier siehst du wo du den Code hin tippen musst. Toll wenn du das geschafft hast!! Jetzt kannst du oben auf "Speichern" drücken danach sollte dein Bildschirm so wie auf dem Bild aussehen. Aber fehlt da nicht noch was?
+    }{Draw2.png}{0.4}{0.4}{11}{16}
+
 \end{document}
