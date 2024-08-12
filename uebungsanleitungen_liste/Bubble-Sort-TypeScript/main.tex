@@ -59,7 +59,7 @@ Wir fangen mit der \textit{draw()} function an. Mit dieser erstellen wir unsere 
     
 p.image(biber, 15, 100, biberGröße, biberGröße);
 
-behälterPositionen = [];
+behaelterPositionen = [];
 
 // "Klont" die Behälter
 for (let i = 0; i < 3; i++) {
@@ -67,9 +67,9 @@ for (let i = 0; i < 3; i++) {
 const position = { x: 50 + 90 * i, y: p.height - 315, widthbehaelterBreite, 
 height: behaelterHöhe };
 
-behälterPositionen.push(position);
+behaelterPositionen.push(position);
 
-p.image(behälter, position.x, position.y, position.width
+p.image(behaelter, position.x, position.y, position.width
 position.height);
 }
 
@@ -88,11 +88,219 @@ Hier siehst du wo du den Code hin tippen musst. Toll wenn du das geschafft hast!
 \TextDesign{
  Eine \textit{for} Schleife kannst du dir wie eine \textit{widerhole '' mal} Schleife vorstellen. Die Variable \textit{i} wird mit \textit{let i = 0} angelegt. Mit \textit{i ++}  sagen wir das bei jeden Durchlauf i um 1 erhöht wird. Und mit  \textit{i<3} schauen wir ob i noch kleiner ist 3 und wenn nicht hört die Schleife auf. 
 }
-
 \vspace{0.5cm}
 
-\TextAndImage{
-Hier siehst du wo du den Code hin tippen musst. Toll wenn du das geschafft hast!! Jetzt kannst du oben auf "Speichern" drücken danach sollte dein Bildschirm so wie auf dem Bild aussehen. Aber fehlt da nicht noch was?
-    }{Draw2.png}{0.4}{0.4}{11}{16}
+\TextDesign{
+Natürlich brauchen wir noch Bälle mit den richtigen Farben das schreiben wir deshaln noch in unsere \textit{for Schleife} dazu: 
+}
+\vspace{0.5cm}
+    \begin{tcolorbox}[colback=gray!30, colframe=white]
+        \begin{verbatim}
+
+      const baelle = behaelterInhalte[i].padStart(3, ' ');
+      for (let j = 0; j < baelle.length; j++) {
+        //"Klont" Bälle und weist Farbe zu
+        switch (baelle[j]) {
+          case 'B':
+            p.image(ballBlau, 63 + 90 * i, p.height - 300 + j * 70, ballGroeße, ballGroeße);
+            break;
+          case 'P':
+            p.image(ballPink, 63 + 90 * i, p.height - 300 + j * 70, ballGroeße, ballGroeße);
+            break;
+
+          default:
+            break;
+        }
+
+\end{verbatim}
+    \end{tcolorbox}
+
+    \vspace{0.5cm}
+
+\TextDesign{
+Ist dir aufgefallen was noch fehlt? Genau! Unser Gewinner-Bildschirm! Deshalb brauchen wir ein \textit{if else Statement} Wenn der Benutzer gewonnen hat geben wir einen anderen Bildschirm aus. Vergiss Bitte nicht immer auf speichern zu drücken wenn du etwas dazu geschrieben oder verändert hast!
+}
+\vspace{0.5cm}
+    \begin{tcolorbox}[colback=gray!30, colframe=white]
+        \begin{verbatim}
+  if (gewonnen === 1) {
+    //Sorgt für Gewinner-Bildschirm
+
+    p.image(gewinnerSterne, 15, p.height - gewinnerSterneHoehe - 100, gewinnerSterneBreite, gewinnerSterneHöhe);
+    p.image(gewinnerBildschirm, -5, p.height - gewinnerHoehe - 350, gewinnerBreite, gewinnerHoehe);
+  } else {
+Hier kommt unser Code den wir hatten hin ;) Dafür kanns du deinen Code einfach makieren auf auschneiden gehen und dann mit einen Rechts klick im else Statement wider einfügen
+    }
+\end{verbatim}
+    \end{tcolorbox}
+\TextDesign{
+Fangen wir an mit der Logik. Wir brauchen natürlich wider eine function FrageUmQuellBehälter. hier siehst du das wir eine Variable definieren. Wieso machen wir das nicht oben? Es gibt so genannte \textit{Globale Variablen} diese sind die am ganz Anfang. Aber manche Variablen brauchen wir nicht immer sondern nur an gewissen stellen deshalb kann man in TypeScript Variablen Lokal anlegen. Also dort wo man sie braucht legt man sie auch an. Diese zwei Striche \textit{||} sind unser \textit{oder} ind \textit{let von} wird unsere Antwort von einen Text in eine Nummer umgewandelt.. Mit return geben wir einen Wert zurück in diesen Fall \textit{von};
+}
+\vspace{0.5cm}
+    \begin{tcolorbox}[colback=gray!30, colframe=white]
+        \begin{verbatim}
+async function FrageUmQuellBehälter(): Promise<number> {
+  const vonString = await question('Aus welchem Behälter?');
+  let von = parseInt(vonString) || 0;
+  // Prüft Eingabe
+  if (von < 1 || von > 3) {
+    await say('Ungültige Zahl, Eingabe muss\nzwischen 1 und 3 sein', 3);
+    von = 0;
+  } else {
+    // Prüft ob Behälter leer ist
+    if (behaelterInhalte[von - 1].length === 0) {
+      await say('Der Behälter darf nicht leer sein', 3);
+      von = 0;
+    }
+  }
+
+  return von;
+  }
+\end{verbatim}
+    \end{tcolorbox}
+
+\vspace{0.5cm}
+\newpage
+\TextDesign{
+Super wenn du das Geschafft hast!!! Jetzt geht es weiter;) Unsere zweite function ist unsere \textit{FrageUmZielBehälter}. Hier haben wir das erste mal zwei und-Zeichen das ist unser \textit{und}. \textit{!==} überprüft ob es \textit{nicht} gleich ist. Auch hier brauchen wir wider ein return. Mit disen [] Eckigen Klammern können wir auf Elemente in der Liste Zugreifen z.B. B\textit{BehälterListe[2]} greift auf das dritte Element zu (wir fangen bei null zum zählen an).}
+
+    \begin{tcolorbox}[colback=gray!30, colframe=white]
+        \begin{verbatim}
+async function FrageUmZielBehaelter(genommeneFarbe: string): Promise<number> {
+  const zuString = await question('Zu welchen Behälter?');
+  let zu = parseInt(zuString) || 0;
+  // Prüft Eingabe
+  if (zu < 1 || zu > 3) {
+    await say('Ungültige Zahl, Eingabe muss\nzwischen 1 und 3 sein', 3);
+    zu = 0;
+  } else {
+    // Prüft Farbe; wenn Zielbehälter leer ist, spielt Farbe keine Rolle
+    if (behaelterInhalte[zu - 1].length > 0 && behaelterInhalte[zu - 1][0] !== genommeneFarbe) {
+      await say('Du kannst nur gleiche Farben aufeinander\nstappeln! Bitte probiere es nochmal', 3);
+      zu = 0;
+    } else {
+      // Prüft ob der Behälter voll ist
+      if (behaelterInhalte[zu - 1].length === 3) {
+        await say('Der Behälter darf nicht voll sein', 3);
+        zu = 0;
+      }
+    }
+  }
+
+  return zu;
+}
+\end{verbatim}
+    \end{tcolorbox}
+\TextDesign{
+Du kannst echt stolz auf dich sein wenn du das schon fehlerfrei abgetippt hast! Dafür kommen wir jetzt zu zwei ganz kleinen functions was in TypeScript um einiges kürzer und leichter sind als in Scratch! Hier haben wir einmal unsere \textit{EntferneZeichen} function \textit{text und index} sind so genannte Parameter. Das kann man sich so vorstellen würdest du jemanden sagen er soll dir einen Apfel bei dem Buffet holen, müsste die Person hin gehen, den Apfel bestellen, zurück gehen und ihn dir geben. Hier ist der Apfel der Parameter und der Rest die function, wenn du sagst bitte hole mir eine Semmel muss die Person genau das gleiche wider machen nur das er eine Semmel statt einen Apfel bestellt. Das brauchen wir auch bei unserer \textit{FügeZeichenEin} function. 
+}
+
+
+    \begin{tcolorbox}[colback=gray!30, colframe=white]
+        \begin{verbatim}
+function EntferneZeichen(text: string, index: number) {
+  return text.substring(0, index) + text.substring(index + 1);
+} //gibt uns einen neuen Text ohne den Buchstaben am index zurück
+
+function FuegeZeichenHinzu(text: string, zeichen: string) {
+  return zeichen + text;
+} //gibt uns einen Text zurück wo ein Zeichen am Anfang hinzugefügt wird
+\end{verbatim}
+    \end{tcolorbox}
+\newpage
+\TextDesign{
+Gut gemacht!! und auf zum nächsten!hier haben wir eine andere Form der \textit{for} schleife. Bei dieser gehen wir einmal Stück für Stück unsere Liste durch. 
+}
+    \begin{tcolorbox}[colback=gray!30, colframe=white]
+        \begin{verbatim}
+function PrüfeObGewonnen() {
+  // Prüft ob der Benutzer bereits Gewonnen hat
+
+  gewonnen = 1;
+  let leer = 0;
+  // Schleife über alle Behälter
+  for (let inhalt of behaelterInhalte) {
+    if (inhalt === '') {
+      leer = 1;
+    } else {
+      // Schleife über alle Bälle
+      for (let ball of inhalt) {
+        if (ball !== inhalt[0]) {
+          gewonnen = 0; // Wenn ein Ball im Gefäß nicht übereinstimmt, haben wir nicht gewonnen
+        }
+      }
+    }
+  }
+  // Wenn kein Gefäß leer ist, haben wir nicht gewonnen
+  if (leer !== 1) {
+    gewonnen = 0;
+  }
+}
+\end{verbatim}
+    \end{tcolorbox}
+\newpage
+
+\TextDesign{
+Toll gemacht! Jetzt bist du ja schon ein richtiger Tipp-Profi! Das hier ist unsere letzte function was wir brauchen. Hier haben wir eine Sache was neu ist \textit{Math.floor(p.random(bälle.length));} diese Zeile gibt uns eine Zufällige Nummer zwischen 1 und der Länge und der Anzahl unserer Bälle. Mit \textit{Math.floor()} runden wir ab falls wir eine Kommerzahl haben, das kannst du dir einfach merken floor ist ja der Boden deshalb runden wir ab.
+}
+        \begin{tcolorbox}[colback=gray!30, colframe=white]
+        \begin{verbatim}
+function BehaelterFuellen() {
+  // Fülle unsere Behälter bis eine Kombination gefunden wurde,
+  // die noch von Anfang an gleich als gewonnen zählt.
+  do {
+    let baelle = 'BBBPPP'; // Alle verfügbaren Bälle
+    behaelterInhalte = [];
+
+    for (let i = 0; i < 2; i++) {
+      let baelleInBehaelter = '';
+      for (let j = 0; j < 3; j++) {
+        const zufaelligeNummerFuerBall = Math.floor(p.random(baelle.length));
+        baelleInBehaelter = FuegeZeichenHinzu(baelleInBehaelter, baelle[zufaelligeNummerFuerBall]);
+        baelle = EntferneZeichen(baelle, zufaelligeNummerFuerBall);
+      }
+      behaelterInhalte.push(baelleInBehaelter);
+    }
+
+    behaelterInhalte.push(''); // Fügt am Ende einen leeren Behälter ein
+
+    PruefeObGewonnen();
+  } while (gewonnen === 1);
+}
+\end{verbatim}
+    \end{tcolorbox}
+
+\TextDesign{
+Prima! Fast fertig! Jetzt müssen wir nur noch alles zusammenfügen, hier haben wir auch wider eine Schleife unzwar eine \textit{do while} heißt es geht einmal durch und dann bis die Bedingung im while Statement erfüllt ist. Das sorgt dafür das immer wider gefragt wird bis es richtig ist. 
+}
+            \begin{tcolorbox}[colback=gray!30, colframe=white]
+        \begin{verbatim}
+  BehaelterFuellen();
+
+  // Schleife die dafür sorgt das immer wider gefragt wird bis man gewonnen hat
+  do {
+    //Z.B. BehälterListe[0]=> 'BPP'
+    let von = 0;
+    let zu = 0;
+    let genommeneFarbe = '';
+    do {
+      von = await FrageUmQuellBehaelter(); //1
+      if (von !== 0) {
+        genommeneFarbe = behaelterInhalte[von - 1][0]; //-1 weil wir
+        bei 0 zum Zählen beginnen genommeneFarbe ='B'
+        zu = await FrageUmZielBehaelter(genommeneFarbe); //3
+      }
+    } while (von === 0 || zu === 0);
+
+    // Im Gegensatz zu Scratch ist der erste Eintrag in einer Liste
+    // in Typescript an der Position 0, nicht 1
+    von--;
+    zu--;
+    behaelterInhalte[von] = EntferneZeichen(behaelterInhalte[von], 0); //'BPP'=>'PP'
+    behaelterInhalte[zu] = FuegeZeichenHinzu(behaelterInhalte[zu], genommeneFarbe); //''=> 'P'
+    PruefeObGewonnen();
+  } while (gewonnen === 0);
+\end{verbatim}
+    \end{tcolorbox}
 
 \end{document}
