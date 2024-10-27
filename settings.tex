@@ -21,8 +21,46 @@
 \usepackage[table]{xcolor}
 \usepackage{fontawesome5}
 \usepackage{changepage}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.6,.6,.6}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, for, let},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{darkgray}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   extendedchars=true,
+   basicstyle=\fontsize{10pt}{12pt}\selectfont\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=none,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b,
+   frame=single,
+   framesep=1em,
+}
 
 \setmainfont{Carlito}
+\setmonofont{Courier New}
 
 % Fancyhdr setup
 \fancypagestyle{defaultpagestyle}{
@@ -35,8 +73,10 @@
 }
 
 \newcommand{\SectionDesign}[4]{
+    \ifthenelse{\equal{#1}{section}}{\vspace{0cm}}{\vspace{0.5cm}}
     \noindent
     \csname #1*\endcsname{\textcolor[HTML]{1E90FF}{\fontsize{#2pt}{#3pt}\selectfont #4}}
+    \ifthenelse{\equal{#1}{section}}{\vspace{2cm}}{\vspace{0.5cm}}
 }
 
 \newcommand{\TextAndImage}[7][{}]{
@@ -69,4 +109,5 @@
     \noindent
     \RaggedRight
     #1 % First parameter: text
+    \vspace{0.5cm}
 }
